@@ -11,6 +11,7 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
+    "lint": "eslint ./packages/skint-2022/src --ext js,jsx -c .eslintrc.json --fix",
     "tailwind": "tailwindcss -i ./packages/skint-2022/src/theme/main.css -o ./packages/skint-2022/src/theme/main-out.css",
     "tailwind:watch": "nodemon --watch ./packages/skint-2022/src --ignore ./packages/skint-2022/src/theme/main-out.css --exec npm run tailwind -e js,mjs,json,yml,css,jsx",
     "dev": "frontity dev --dont-open-browser",
@@ -21,7 +22,6 @@
   "dependencies": {
     "@frontity/core": "^1.14.3",
     "@frontity/html2react": "^1.7.0",
-    "@frontity/mars-theme": "./packages/mars-theme",
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/wp-source": "^1.11.7",
     "@heroicons/react": "^1.0.5",
@@ -29,12 +29,20 @@
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.0",
     "@tailwindcss/typography": "^0.5.0",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-webpack-plugin": "^3.1.1",
     "frontity": "^1.17.1",
     "nodemon": "^2.0.15",
     "postcss": "^8.4.4",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.0.1",
+    "react": "^17.0.2",
     "skint-2022": "file:packages/skint-2022",
     "tailwindcss": "^3.0.0"
   },
