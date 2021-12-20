@@ -27,7 +27,7 @@ const Root = ({state, actions}) => {
       <Global styles={css(externalCSS)} />
       <main>
         <Switch>
-          <Home when={data.isHome}></Home>
+          <Home when={data.isHome}/>
           <List when={data.isArchive}/>
           <Post when={data.isPost}/>
           <Page when={data.isPage}/>

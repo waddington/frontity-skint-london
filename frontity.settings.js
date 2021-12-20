@@ -16,8 +16,8 @@ const settings = {
       "state": {
         "source": {
           "url": "https://www.skintlondon.com",
-          "homepage": "/Home",
-          "postsPage": "/posts"
+          // "homepage": "/Home",
+          // "postsPage": "/posts"
         }
       }
     },
