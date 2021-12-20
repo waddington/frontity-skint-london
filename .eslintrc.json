@@ -1,0 +1,44 @@
+{
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "eslint-plugin-import",
+    "react-hooks",
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+//    "plugin:jest/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules": {
+    // suppress errors for missing 'import React' in files
+    "react/react-in-jsx-scope": "off",
+    // allow jsx syntax in js files (for next.js project)
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "max-len": "warn",
+//    "react/button-has-type": "off",
+//    "import/prefer-default-export": "off"
+    //        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+//            "indent": ["error", 2],
+//            "react/jsx-indent": ["error", 2],
+//            "react/jsx-indent-props": ["error", 2],
+    //        "react/prop-types": "off",
+    //        "no-console": "off",
+    //        "quotes": ["error", "double"],
+    //        "semi": ["error", "always"],
+            "no-unused-vars": "warn"
+    //        "no-param-reassign": "warn"
+  }
+}
