@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Global, css, connect, styled, Head } from "frontity";
 import FeaturedMediaItem from '../featuredMediaItem';
 import Link from '@frontity/components/link';
@@ -23,9 +24,10 @@ const LargePostCard = ({ state, children, actions, postId, postLink, libraries }
         <div>
           <Html2React html={excerpt.rendered} />
         </div>
-        <div className="mt-5">
+        <div className="my-5">
           <Link link={link} className="py-2 px-3 rounded-lg border-2 border-skintRed bg-white hover:bg-skintRed hover:text-white focus:bg-skintRed focus:text-white active:bg-skintRed active:text-white">Read more</Link>
         </div>
+        <div className="clear"/>
       </div>
     </div>
   )

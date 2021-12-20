@@ -1,6 +1,7 @@
 import { Global, css, connect, styled, Head } from 'frontity';
 import Link from '@frontity/components/link';
 import MobileMenu from './mobileMenu';
+import { useEffect } from 'react';
 
 const DefaultMenu = ({
   state,
@@ -9,6 +10,17 @@ const DefaultMenu = ({
 
   const topLevelMenuListItemClasses = "px-0 text-sm lg:text-base lg:px-2 xl:text-xl"
   const topLevelMenuLinkClasses = "px-1 py-3 xl:px-3 hover:underline focus:underline active:underline underline-offset-2 hover:decoration-1 focus:decoration-1 active:decoration-1"
+
+  useEffect(() => {
+    state.theme.menu.forEach((item1) => {
+      actions.source.fetch(item1.href);
+      if (item1.submenu) {
+        item1.submenu.forEach((item2) => {
+          actions.source.fetch(item2.href)
+        })
+      }
+    })
+  }, [])
 
   return (
     <>
