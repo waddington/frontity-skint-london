@@ -1,11 +1,23 @@
 import { Global, css, connect, styled, Head } from 'frontity';
 import Link from '@frontity/components/link';
+import { useEffect } from 'react';
 
 const MobileMenu = ({
   state,
   actions
 }) => {
   const mobileMenuLinkClasses = "block py-5 hover:underline focus:underline active:underline underline-offset-2 hover:decoration-1 focus:decoration-1 active:decoration-1"
+
+  useEffect(() => {
+    state.theme.menu.forEach((item1) => {
+      actions.source.fetch(item1.href);
+      if (item1.submenu) {
+        item1.submenu.forEach((item2) => {
+          actions.source.fetch(item2.href)
+        })
+      }
+    })
+  }, [])
 
   return (
     <>
