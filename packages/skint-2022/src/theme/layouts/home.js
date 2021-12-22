@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import LargePostCard from '../components/cards/largePost';
 import { useEffect } from 'react';
 import Link from '@frontity/components/link';
+import HeroPostsSlider from '../components/heroPostsSlider';
 
 const AsideCard = ({title, text, linkText, link}) => {
   return (
@@ -19,6 +20,7 @@ const Home = ({ state, children, actions }) => {
   const data = state.source.get(state.router.link)
   const recentItems = data.items;
   const largeCardItems = recentItems.slice(0,2)
+  const heroItems = recentItems.slice(3,7)
 
   useEffect(() => {
     actions.source.fetch("/");
@@ -29,7 +31,7 @@ const Home = ({ state, children, actions }) => {
     <div className="w-full bg-white">
       <Header />
       {/* hero */}
-        <div>HERO IMAGE</div>
+      <HeroPostsSlider postItems={heroItems} />
       {/*  Body */}
         <div className="max-w-screen-xl mx-auto px-8 py-5">
           <div className="mb-16 flex flex-col space-y-12 md:flex-row md:space-y-0 md:space-x-8 md:items-stretch">

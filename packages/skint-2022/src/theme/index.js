@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, StrictMode } from 'react';
 import {connect, Global, css, styled} from "frontity"
 import Switch from "@frontity/components/switch"
 import List from "./list";
@@ -25,19 +25,17 @@ const Root = ({state, actions}) => {
               }
             `}/>
       <Global styles={css(externalCSS)} />
-      <main>
-        <Switch>
-          <Home when={data.isHome}/>
-          <List when={data.isArchive}/>
-          <Post when={data.isPost}/>
-          <Page when={data.isPage}/>
-        </Switch>
-      </main>
+      <StrictMode>
+        <main>
+          <Switch>
+            <Home when={data.isHome}/>
+            <List when={data.isArchive}/>
+            <Post when={data.isPost}/>
+            <Page when={data.isPage}/>
+          </Switch>
+        </main>
+      </StrictMode>
     </>
   )
 }
 export default connect(Root)
-
-const Header = styled.header`
-  background-color: #e5edee;
-`

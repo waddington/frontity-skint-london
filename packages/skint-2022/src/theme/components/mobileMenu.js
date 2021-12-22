@@ -28,7 +28,7 @@ const MobileMenu = ({
         }
       `} />
       {/*body overlay*/}
-      <div className="w-full h-screen fixed inset-0 bg-gray-900/[.95]" onClick={actions.theme.toggleMobileMenu}>
+      <div className="w-full h-screen fixed inset-0 bg-gray-900/[.95] z-[1]" onClick={actions.theme.toggleMobileMenu}>
         {/*menu container area*/}
         <div className="bg-white w-full h-screen max-w-md fixed top-0 left-0 flex flex-col" onClick={(e) => e.stopPropagation()}>
           {/*top stuff (logo, close button)*/}

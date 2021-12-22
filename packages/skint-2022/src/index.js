@@ -89,6 +89,7 @@ export default {
       isUrlVisible: true,
       isMobileMenuOpen: false,
       scrollPosition: 0,
+      autoPrefetch: 'all'
     }
   },
   actions: {

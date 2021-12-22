@@ -17,7 +17,7 @@ const LargePostCard = ({ state, children, actions, postId, postLink, libraries }
   return (
     <div className="w-full bg-white">
       <div className="w-full h-60 object-cover ">
-        <FeaturedMediaItem id={featuredMediaId} />
+        <FeaturedMediaItem id={featuredMediaId} rounded={true}/>
       </div>
       <div>
         <h3 className="font-bold text-lg py-3 text-slate-800" dangerouslySetInnerHTML={{ __html: title.rendered }}/>
